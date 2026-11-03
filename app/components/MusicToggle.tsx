@@ -37,12 +37,18 @@ interface MusicToggleProps {
 const MusicToggle = forwardRef<MusicToggleHandle, MusicToggleProps>(
   function MusicToggle({ visible }, ref) {
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const [muted, setMuted] = useState(() => {
-      if (typeof window === 'undefined') return false;
-      return localStorage.getItem(LS_KEY) === 'true';
-    });
+    // Start unmuted on both server and client to avoid a hydration mismatch;
+    // the stored preference is applied after mount.
+    const [muted, setMuted] = useState(false);
     /** Whether start() has been called (i.e. user gesture received). */
     const startedRef = useRef(false);
+
+    /* ── Restore stored preference ──────────────────────────────── */
+    useEffect(() => {
+      try {
+        if (localStorage.getItem(LS_KEY) === 'true') setMuted(true);
+      } catch {}
+    }, []);
 
     /* ── Create the Audio element once ──────────────────────────── */
     useEffect(() => {

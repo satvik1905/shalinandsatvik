@@ -119,6 +119,9 @@ export default function VelvetIntro({ children, onComplete, onTap }: VelvetIntro
             playsInline
             preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
+            // The video's stage is pure black; 'lighten' swaps it for the maroon
+            // behind it while leaving the brighter red curtains untouched.
+            style={{ mixBlendMode: 'lighten' }}
           />
         </motion.div>
       )}
