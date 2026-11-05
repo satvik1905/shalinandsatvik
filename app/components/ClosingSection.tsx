@@ -2,6 +2,7 @@
 
 import { Eyebrow, Display, Body, GOLD } from './Typography';
 import { useLang } from './LanguageContext';
+import { THEME } from '../lib/theme';
 
 export default function ClosingSection() {
   const { t } = useLang();
@@ -9,7 +10,7 @@ export default function ClosingSection() {
   return (
     <section
       className="w-full flex flex-col items-center px-6 py-20 md:py-28 pb-32"
-      style={{ background: '#1A0E0E' }}
+      style={{ background: THEME.bg }}
     >
       {/* Decorative flourish */}
       <svg width="24" height="14" viewBox="0 0 24 14" fill="none" aria-hidden className="mb-8">
@@ -29,7 +30,7 @@ export default function ClosingSection() {
       <div
         className="h-px w-16 my-8"
         style={{
-          background: 'linear-gradient(to right, transparent, rgba(201, 154, 79, 0.7), transparent)',
+          background: `linear-gradient(to right, transparent, rgba(${THEME.lineRgb}, 0.7), transparent)`,
         }}
         aria-hidden
       />

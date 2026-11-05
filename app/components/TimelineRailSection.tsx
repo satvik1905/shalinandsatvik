@@ -2,8 +2,9 @@
 
 import { useMemo } from 'react';
 import Image from 'next/image';
-import { Eyebrow, Display, EventName, Body, GOLD, IVORY } from './Typography';
+import { Eyebrow, Display, EventName, Body, GOLD, INK } from './Typography';
 import { useLang } from './LanguageContext';
+import { THEME } from '../lib/theme';
 
 /* ═══════════════════════════════════════════════════════════════
    Option A — Timeline Rail (temporary, for comparison)
@@ -23,7 +24,7 @@ const RAIL_CONFIG = {
   COLUMN_MAX: 600,
 };
 
-const GOLD_BORDER = 'rgba(201, 154, 79, 0.3)';
+const GOLD_BORDER = `rgba(${THEME.lineRgb}, 0.3)`;
 
 /** Illustration paths — mirrors ItinerarySection. */
 const ILLUSTRATIONS: Record<string, string> = {
@@ -114,7 +115,7 @@ function RailEventItem({ event, dressLabel }: { event: RailEvent; dressLabel: st
           height: RAIL_CONFIG.DOT_SIZE,
           borderRadius: '50%',
           border: `2px solid ${GOLD}`,
-          background: '#1A0E0E',
+          background: THEME.bg,
           zIndex: 2,
         }}
       />
@@ -255,12 +256,12 @@ export default function TimelineRailSection() {
   return (
     <section
       className="w-full px-4 sm:px-6 py-20 md:py-28"
-      style={{ background: '#1A0E0E' }}
+      style={{ background: THEME.bg }}
     >
       {/* ── Section label ──────────────────────────────── */}
       <div className="flex flex-col items-center gap-3 mb-10">
         <Eyebrow style={{ opacity: 0.5 }}>Option A</Eyebrow>
-        <Display color="ivory" style={{ fontSize: 'clamp(1.6rem, 6vw, 2.2rem)' }}>
+        <Display color="ink" style={{ fontSize: 'clamp(1.6rem, 6vw, 2.2rem)' }}>
           Timeline Rail
         </Display>
       </div>

@@ -5,6 +5,7 @@ import confetti from 'canvas-confetti';
 import ScratchCoin from './ScratchCoin';
 import { Eyebrow, Display } from './Typography';
 import { useLang } from './LanguageContext';
+import { THEME } from '../lib/theme';
 
 export default function ScratchSection() {
   const [revealedCount, setRevealedCount] = useState(0);
@@ -19,7 +20,7 @@ export default function ScratchSection() {
         allRevealedRef.current = true;
         setAllRevealed(true);
         setTimeout(() => {
-          const colors = ['#C99A4F', '#E5C589', '#B91C1C', '#8B1A2B', '#F5EBD9'];
+          const colors = THEME.confetti;
           const waves = 18;
           const duration = 2500;
           for (let i = 0; i < waves; i++) {
@@ -47,9 +48,9 @@ export default function ScratchSection() {
   return (
     <section
       className="w-full flex flex-col items-center justify-center px-6 pt-12 pb-24 md:pt-16 md:pb-32"
-      style={{ background: '#1A0E0E', color: '#F5EBD9' }}
+      style={{ background: THEME.bg, color: THEME.heading }}
     >
-      <Display color="ivory" className="mb-3">{t.scratch.heading}</Display>
+      <Display color="ink" className="mb-3">{t.scratch.heading}</Display>
 
       <Eyebrow as="p" className="mb-14 md:mb-16">{t.scratch.instruction}</Eyebrow>
 

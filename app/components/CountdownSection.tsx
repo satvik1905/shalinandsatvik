@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Display, Eyebrow, Numeral } from './Typography';
 import { useLang } from './LanguageContext';
+import { THEME } from '../lib/theme';
 
 const WEDDING_DATE = new Date('2026-12-27T12:00:00+05:30').getTime();
 
@@ -40,8 +41,8 @@ function CountBox({ value, label, padValue = true }: CountBoxProps) {
         style={{
           width: 'clamp(64px, 19vw, 92px)',
           height: 'clamp(64px, 19vw, 92px)',
-          border: '1.5px solid rgba(201, 154, 79, 0.65)',
-          background: 'rgba(201, 154, 79, 0.06)',
+          border: `1.5px solid rgba(${THEME.lineRgb}, 0.65)`,
+          background: `rgba(${THEME.lineRgb}, 0.06)`,
         }}
       >
         <AnimatePresence mode="wait" initial={false}>
@@ -79,14 +80,14 @@ export default function CountdownSection() {
   return (
     <section
       className="w-full flex flex-col items-center justify-center px-6 pt-20 pb-24 md:pt-24 md:pb-32"
-      style={{ background: '#1A0E0E', color: '#F5EBD9' }}
+      style={{ background: THEME.bg, color: THEME.heading }}
     >
-      <Display color="ivory" className="mb-2">{t.countdown.heading}</Display>
+      <Display color="ink" className="mb-2">{t.countdown.heading}</Display>
 
       <div
         className="h-px w-20 my-8"
         style={{
-          background: 'linear-gradient(to right, transparent, rgba(201, 154, 79, 0.7), transparent)',
+          background: `linear-gradient(to right, transparent, rgba(${THEME.lineRgb}, 0.7), transparent)`,
         }}
         aria-hidden
       />
@@ -101,7 +102,7 @@ export default function CountdownSection() {
       <div
         className="h-px w-12 mt-12 mb-5"
         style={{
-          background: 'linear-gradient(to right, transparent, rgba(201, 154, 79, 0.8), transparent)',
+          background: `linear-gradient(to right, transparent, rgba(${THEME.lineRgb}, 0.8), transparent)`,
         }}
         aria-hidden
       />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Cormorant_Garamond, Tiro_Devanagari_Marathi } from "next/font/google";
 import "./globals.css";
+import { THEME } from "./lib/theme";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,7 +59,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${tiroDevanagari.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col" style={{ background: '#1A0E0E', color: '#F5EBD9' }}>{children}</body>
+      <body className="min-h-full flex flex-col" style={{ background: THEME.bg, color: THEME.heading }}>{children}</body>
     </html>
   );
 }

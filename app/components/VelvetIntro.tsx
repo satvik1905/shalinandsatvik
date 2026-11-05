@@ -10,6 +10,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { Eyebrow } from './Typography';
 import { useLang } from './LanguageContext';
+import { THEME, GOLD_ON_DARK } from '../lib/theme';
 
 type Stage = 'idle' | 'revealing' | 'fading' | 'done';
 
@@ -108,20 +109,18 @@ export default function VelvetIntro({ children, onComplete, onTap }: VelvetIntro
       {showVideo && (
         <motion.div
           className="fixed inset-0 z-50"
-          style={{ background: '#1A0E0E' }}
+          style={{ background: THEME.bg }}
           animate={{ opacity: videoOpacity }}
           transition={{ duration: 1.0, ease: 'easeInOut' }}
         >
           <video
             ref={videoRef}
-            src="/curtain.mp4"
+            src={THEME.introVideo}
             muted
             playsInline
             preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
-            // The video's stage is pure black; 'lighten' swaps it for the maroon
-            // behind it while leaving the brighter red curtains untouched.
-            style={{ mixBlendMode: 'lighten' }}
+            style={{ mixBlendMode: THEME.introBlend }}
           />
         </motion.div>
       )}
@@ -196,7 +195,7 @@ export default function VelvetIntro({ children, onComplete, onTap }: VelvetIntro
                 />
 
                 {/* The text */}
-                <Eyebrow as="p">{t.tapToReveal}</Eyebrow>
+                <Eyebrow as="p" style={{ color: GOLD_ON_DARK }}>{t.tapToReveal}</Eyebrow>
               </div>
             </motion.div>
           </motion.div>

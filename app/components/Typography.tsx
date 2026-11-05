@@ -2,10 +2,11 @@
 
 import { Fragment, type ReactNode, type ElementType, type CSSProperties } from 'react';
 import { useLang } from './LanguageContext';
+import { THEME } from '../lib/theme';
 
 // ── Tokens ─────────────────────────────────────────────────────
-export const GOLD = '#E0B84F';
-export const IVORY = '#F5EBD9';
+export const GOLD = THEME.gold;
+export const INK = THEME.heading;
 
 // ── Font helpers ───────────────────────────────────────────────
 
@@ -75,7 +76,7 @@ export function DisplayXL({ children, as: Tag = 'h1', className = '', style }: D
     fontWeight: 400,
     fontSize: isMr ? 'clamp(5.25rem, 21vw, 9.5rem)' : 'clamp(4.5rem, 18vw, 8rem)',
     lineHeight: isMr ? 1.15 : 0.95,
-    color: IVORY,
+    color: INK,
   };
   return <Tag className={className} style={{ ...base, ...style }}>{children}</Tag>;
 }
@@ -84,7 +85,7 @@ export function DisplayXL({ children, as: Tag = 'h1', className = '', style }: D
 
 interface DisplayProps {
   children: ReactNode;
-  color?: 'gold' | 'ivory';
+  color?: 'gold' | 'ink';
   as?: ElementType;
   className?: string;
   style?: CSSProperties;
@@ -99,7 +100,7 @@ export function Display({ children, color = 'gold', as: Tag = 'h2', className = 
     fontSize: isMr ? 'clamp(2.35rem, 8.2vw, 3.5rem)' : 'clamp(2rem, 7vw, 3rem)',
     letterSpacing: '0.02em',
     lineHeight: isMr ? 1.3 : undefined,
-    color: color === 'gold' ? GOLD : IVORY,
+    color: color === 'gold' ? GOLD : INK,
   };
   return <Tag className={className} style={{ ...base, ...style }}>{children}</Tag>;
 }
@@ -121,7 +122,7 @@ export function Body({ children, as: Tag = 'p', className = '', style }: BodyPro
     fontSize: isMr ? 'clamp(1.18rem, 4.8vw, 1.35rem)' : 'clamp(1rem, 4vw, 1.125rem)',
     lineHeight: isMr ? 1.9 : 1.7,
     letterSpacing: '0.01em',
-    color: '#EDE6D6',
+    color: THEME.body,
   };
   return <Tag className={className} style={{ ...base, ...style }}>{children}</Tag>;
 }
@@ -165,7 +166,7 @@ export function EventName({ children, as: Tag = 'span', className = '', style }:
     fontSize: isMr ? 'clamp(1.35rem, 5.2vw, 1.65rem)' : 'clamp(1.15rem, 4.5vw, 1.4rem)',
     letterSpacing: '0.02em',
     lineHeight: isMr ? 1.5 : undefined,
-    color: '#EDE6D6',
+    color: THEME.body,
   };
   return <Tag className={className} style={{ ...base, ...style }}>{children}</Tag>;
 }
@@ -188,7 +189,7 @@ export function MapLink({ children, href, className = '', style }: MapLinkProps)
     textTransform: 'uppercase',
     letterSpacing: isMr ? '0.06em' : '0.18em',
     color: GOLD,
-    border: '1px solid rgba(224, 184, 79, 0.45)',
+    border: `1px solid rgba(${THEME.goldRgb}, 0.45)`,
     borderRadius: '9999px',
     padding: '0.5rem 1.25rem',
     display: 'inline-flex',
@@ -205,11 +206,11 @@ export function MapLink({ children, href, className = '', style }: MapLinkProps)
       className={className}
       style={{ ...base, ...style }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = 'rgba(224, 184, 79, 0.85)';
-        e.currentTarget.style.background = 'rgba(224, 184, 79, 0.08)';
+        e.currentTarget.style.borderColor = `rgba(${THEME.goldRgb}, 0.85)`;
+        e.currentTarget.style.background = `rgba(${THEME.goldRgb}, 0.08)`;
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = 'rgba(224, 184, 79, 0.45)';
+        e.currentTarget.style.borderColor = `rgba(${THEME.goldRgb}, 0.45)`;
         e.currentTarget.style.background = 'transparent';
       }}
     >

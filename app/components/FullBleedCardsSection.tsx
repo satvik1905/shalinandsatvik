@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import Image from 'next/image';
 import { Eyebrow, Display, EventName, GOLD } from './Typography';
 import { useLang } from './LanguageContext';
+import { THEME, GOLD_ON_DARK, IVORY_ON_DARK } from '../lib/theme';
 
 /* ═══════════════════════════════════════════════════════════════
    Full-Bleed Cards — The Celebrations
@@ -17,8 +18,8 @@ const CONFIG = {
   ASPECT_RATIO: '3 / 4',
 };
 
-const GOLD_BORDER = 'rgba(201, 154, 79, 0.3)';
-const CARD_BG_FALLBACK = '#1E1212';
+const GOLD_BORDER = `rgba(${THEME.lineRgb}, 0.3)`;
+const CARD_BG_FALLBACK = THEME.surface;
 
 const ILLUSTRATIONS: Record<string, string> = {
   haldi: '/haldi.png',
@@ -34,8 +35,7 @@ function Placeholder({ children }: { children: string }) {
   return (
     <span
       style={{
-        color: 'rgba(255, 255, 255, 0.5)',
-        borderBottom: '1px dashed rgba(255, 255, 255, 0.4)',
+        borderBottom: '1px dashed currentColor',
         paddingBottom: 1,
       }}
     >
@@ -64,7 +64,7 @@ function DayDivider({ date }: { date: string }) {
         className="h-px w-3/4 max-w-xs"
         style={{
           background:
-            'linear-gradient(to right, transparent, rgba(201, 154, 79, 0.55), transparent)',
+            `linear-gradient(to right, transparent, rgba(${THEME.lineRgb}, 0.55), transparent)`,
         }}
         aria-hidden
       />
@@ -125,7 +125,7 @@ function BleedCard({ event }: { event: CardEvent }) {
           style={{
             fontSize: 'clamp(1.6rem, 5.5vw, 2.2rem)',
             fontWeight: 500,
-            color: '#F5EBD9',
+            color: IVORY_ON_DARK,
           }}
         >
           {event.name}
@@ -135,19 +135,18 @@ function BleedCard({ event }: { event: CardEvent }) {
         {event.time ? (
           <Display
             as="p"
-            color="gold"
-            style={{ fontSize: 'clamp(1.2rem, 4.5vw, 1.6rem)', lineHeight: 1.2 }}
+            style={{ fontSize: 'clamp(1.2rem, 4.5vw, 1.6rem)', lineHeight: 1.2, color: GOLD_ON_DARK }}
           >
             {event.time}
           </Display>
         ) : (
-          <Eyebrow variant="label" style={{ opacity: 0.7 }}>
+          <Eyebrow variant="label" style={{ opacity: 0.5, color: IVORY_ON_DARK }}>
             <Placeholder>TIME TBD</Placeholder>
           </Eyebrow>
         )}
 
         {/* Venue spot */}
-        <Eyebrow variant="label" style={{ marginTop: 4, opacity: 0.7 }}>
+        <Eyebrow variant="label" style={{ marginTop: 4, opacity: 0.5, color: IVORY_ON_DARK }}>
           <Placeholder>VENUE TBD</Placeholder>
         </Eyebrow>
       </div>
@@ -174,7 +173,7 @@ function FallbackCard({ event }: { event: CardEvent }) {
         style={{
           fontSize: 'clamp(1.6rem, 5.5vw, 2.2rem)',
           fontWeight: 500,
-          color: '#F5EBD9',
+          color: THEME.heading,
         }}
       >
         {event.name}
@@ -269,7 +268,7 @@ export default function FullBleedCardsSection() {
   return (
     <section
       className="w-full px-4 sm:px-6 py-20 md:py-28"
-      style={{ background: '#1A0E0E' }}
+      style={{ background: THEME.bg }}
     >
       {/* ── Section heading ──────────────────────────── */}
       <div className="flex flex-col items-center gap-3 mb-10">
@@ -280,7 +279,7 @@ export default function FullBleedCardsSection() {
             opacity="0.5"
           />
         </svg>
-        <Display color="ivory">{t.itinerary.heading}</Display>
+        <Display color="ink">{t.itinerary.heading}</Display>
       </div>
 
       <div className="mx-auto" style={{ maxWidth: CONFIG.COLUMN_MAX }}>

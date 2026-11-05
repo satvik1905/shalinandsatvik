@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import Image from 'next/image';
 import { Eyebrow, Display, EventName, Body, GOLD } from './Typography';
 import { useLang } from './LanguageContext';
+import { THEME } from '../lib/theme';
 
 /* ═══════════════════════════════════════════════════════════════
    Provisional config — labelled constants, easy to tweak.
@@ -50,8 +51,8 @@ interface EventData {
 
 /* ── shared tokens ─────────────────────────────────────────── */
 
-const GOLD_BORDER = 'rgba(201, 154, 79, 0.3)';
-const CARD_BG = '#1E1212';
+const GOLD_BORDER = `rgba(${THEME.lineRgb}, 0.3)`;
+const CARD_BG = THEME.surface;
 
 /* ── sub-components ────────────────────────────────────────── */
 
@@ -196,7 +197,7 @@ function DayDivider({ date }: { date: string }) {
         className="h-px w-3/4 max-w-xs"
         style={{
           background:
-            'linear-gradient(to right, transparent, rgba(201, 154, 79, 0.55), transparent)',
+            `linear-gradient(to right, transparent, rgba(${THEME.lineRgb}, 0.55), transparent)`,
         }}
         aria-hidden
       />
@@ -279,7 +280,7 @@ export default function ItinerarySection() {
   return (
     <section
       className="w-full px-4 sm:px-6 py-20 md:py-28"
-      style={{ background: '#1A0E0E' }}
+      style={{ background: THEME.bg }}
     >
       {/* ── Section heading ──────────────────────────── */}
       <div className="flex flex-col items-center gap-3 mb-10">
@@ -290,7 +291,7 @@ export default function ItinerarySection() {
             opacity="0.5"
           />
         </svg>
-        <Display color="ivory">{t.itinerary.heading}</Display>
+        <Display color="ink">{t.itinerary.heading}</Display>
       </div>
 
       <div className="mx-auto" style={{ maxWidth: CONFIG.COLUMN_MAX_WIDTH }}>

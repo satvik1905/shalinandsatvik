@@ -2,6 +2,7 @@
 
 import { useLang } from './LanguageContext';
 import { GOLD } from './Typography';
+import { THEME } from '../lib/theme';
 
 interface LanguageToggleProps {
   visible: boolean;
@@ -26,7 +27,7 @@ export default function LanguageToggle({ visible }: LanguageToggleProps) {
 
   const active: React.CSSProperties = {
     ...shared,
-    background: 'rgba(224, 184, 79, 0.15)',
+    background: `rgba(${THEME.goldRgb}, 0.15)`,
     opacity: 1,
   };
 
@@ -39,10 +40,10 @@ export default function LanguageToggle({ visible }: LanguageToggleProps) {
         opacity: visible ? 1 : 0,
         pointerEvents: visible ? 'auto' : 'none',
         transition: 'opacity 0.5s ease-in-out',
-        background: 'rgba(26, 14, 14, 0.75)',
+        background: THEME.glass,
         backdropFilter: 'blur(8px)',
         WebkitBackdropFilter: 'blur(8px)',
-        border: '1px solid rgba(224, 184, 79, 0.4)',
+        border: `1px solid rgba(${THEME.goldRgb}, 0.4)`,
         borderRadius: '9999px',
         padding: 3,
       }}

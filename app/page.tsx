@@ -13,12 +13,13 @@ import MusicToggle, { type MusicToggleHandle } from './components/MusicToggle';
 import { LanguageProvider, useLang } from './components/LanguageContext';
 import { Eyebrow, Display, Body, GOLD } from './components/Typography';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { THEME } from './lib/theme';
 
 function GoldDivider({ width = 'w-20' }: { width?: string }) {
   return (
     <div
       className={`h-px ${width} my-5`}
-      style={{ background: 'linear-gradient(to right, transparent, rgba(201, 154, 79, 0.7), transparent)' }}
+      style={{ background: `linear-gradient(to right, transparent, rgba(${THEME.lineRgb}, 0.7), transparent)` }}
       aria-hidden
     />
   );
@@ -73,7 +74,7 @@ function InvitationBlocks() {
       <Body className="text-center">{hostLine}</Body>
 
       {/* Groom name */}
-      <Display as="p" color="ivory" className="mt-2 mb-1">{name1}</Display>
+      <Display as="p" color="ink" className="mt-2 mb-1">{name1}</Display>
 
       {/* Groom parents */}
       <p
@@ -81,7 +82,7 @@ function InvitationBlocks() {
         style={{
           fontFamily: 'var(--font-cormorant)',
           fontSize: 'clamp(0.9rem, 3.5vw, 1rem)',
-          color: 'rgba(237, 230, 214, 1.0)',
+          color: THEME.body,
           letterSpacing: '0.01em',
         }}
       >
@@ -92,7 +93,7 @@ function InvitationBlocks() {
       <Display as="p" className="my-1">{conjunction}</Display>
 
       {/* Bride name */}
-      <Display as="p" color="ivory" className="mb-1">{name2}</Display>
+      <Display as="p" color="ink" className="mb-1">{name2}</Display>
 
       {/* Bride parents */}
       <p
@@ -100,7 +101,7 @@ function InvitationBlocks() {
         style={{
           fontFamily: 'var(--font-cormorant)',
           fontSize: 'clamp(0.9rem, 3.5vw, 1rem)',
-          color: 'rgba(237, 230, 214, 1.0)',
+          color: THEME.body,
           letterSpacing: '0.01em',
         }}
       >
@@ -123,7 +124,7 @@ function HomeContent() {
       <VelvetIntro onComplete={() => setIntroComplete(true)} onTap={() => musicRef.current?.start()}>
         <main
           className="min-h-[100svh] w-full flex flex-col items-center px-6 pt-8 pb-4"
-          style={{ background: '#1A0E0E', color: '#F5EBD9' }}
+          style={{ background: THEME.bg, color: THEME.heading }}
         >
           {/* Top spacer — pushes content toward vertical centre */}
           <div className="flex-1" aria-hidden />
@@ -142,7 +143,7 @@ function HomeContent() {
               style={{
                 fontFamily: 'var(--font-tiro-devanagari)',
                 fontSize: 'clamp(0.85rem, 3.2vw, 1rem)',
-                color: '#F5EBD9',
+                color: THEME.heading,
                 letterSpacing: '0.04em',
               }}
               lang="sa"

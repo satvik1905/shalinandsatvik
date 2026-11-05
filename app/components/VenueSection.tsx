@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { Eyebrow, Display, Body, MapLink } from "./Typography";
 import { useLang } from "./LanguageContext";
+import { THEME } from "../lib/theme";
 
 const fade = {
   hidden: { opacity: 0, y: 24 },
@@ -20,7 +21,7 @@ export default function VenueSection() {
     <section
       ref={ref}
       className="w-full"
-      style={{ background: "#1A0E0E", color: "#F5EBD9" }}
+      style={{ background: THEME.bg, color: THEME.heading }}
     >
       {/* ── Venue info block ──────────────────────────────── */}
       <motion.div
@@ -30,11 +31,11 @@ export default function VenueSection() {
         animate={inView ? "visible" : "hidden"}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
       >
-        <Display color="ivory" className="mb-3">{t.venue.intro}</Display>
+        <Display color="ink" className="mb-3">{t.venue.intro}</Display>
 
         <Display
           className="text-center whitespace-pre-line"
-          color="ivory"
+          color="ink"
           style={{ fontSize: 'clamp(2.4rem, 9vw, 3.8rem)' }}
         >
           {t.venue.name}

@@ -103,11 +103,11 @@ const en: Dictionary = {
       "With love and the blessings of our families, we invite you to celebrate the wedding of",
     name1: "Shalin",
     name1Parents:
-      "(daughter of Shri Kunal Rajnikant Deshmukh & Sau. Sarita Kunal Deshmukh)",
+      "(daughter of Mr. Kunal Rajnikant Deshmukh & Mrs. Sarita Kunal Deshmukh)",
     conjunction: "and",
     name2: "Satvik",
     name2Parents:
-      "(son of Late Shri Jayant Ramachandra Khopkar & Smt. Jyostna Jayant Khopkar)",
+      "(son of Late Mr. Jayant Ramachandra Khopkar & Mrs. Jyostna Jayant Khopkar)",
     closing: "",
   },
   scroll: "Scroll",
@@ -285,7 +285,8 @@ const mr: Dictionary = {
     submitting: "\u092A\u093E\u0920\u0935\u0924 \u0906\u0939\u0947...",
     submitted:
       "\u0924\u0941\u092E\u091A\u094D\u092F\u093E \u092A\u094D\u0930\u0924\u093F\u0938\u093E\u0926\u093E\u092C\u0926\u094D\u0926\u0932 \u0927\u0928\u094D\u092F\u0935\u093E\u0926!",
-    error: "\u0915\u093E\u0939\u0940\u0924\u0930\u0940 \u091A\u0942\u0915 \u0939\u094B\u0924\u0940. \u0915\u0943\u092A\u092F\u093E \u092A\u0941\u0928\u094D\u0939\u093E \u092A\u094D\u0930\u092F\u0924\u094D\u0928 \u0915\u0930\u093E.",
+    error:
+      "\u0915\u093E\u0939\u0940\u0924\u0930\u0940 \u091A\u0942\u0915 \u0939\u094B\u0924\u0940. \u0915\u0943\u092A\u092F\u093E \u092A\u0941\u0928\u094D\u0939\u093E \u092A\u094D\u0930\u092F\u0924\u094D\u0928 \u0915\u0930\u093E.",
   },
   itinerary: {
     heading: "\u0938\u094B\u0939\u0933\u0947",
@@ -319,8 +320,10 @@ const mr: Dictionary = {
     muhuratTime: "",
   },
   closing: {
-    message: "\u0906\u092A\u0932\u0940 \u0909\u092A\u0938\u094D\u0925\u093F\u0924\u0940 \u0906\u0923\u093F \u0906\u0936\u0940\u0930\u094D\u0935\u093E\u0926 \u0906\u092E\u091A\u093E \u0938\u094B\u0939\u0933\u093E \u092A\u0942\u0930\u094D\u0923 \u0915\u0930\u0924\u0940\u0932.",
-    heading: "\u0938\u094D\u0935\u093E\u0917\u0924\u094B\u0924\u094D\u0938\u0941\u0915",
+    message:
+      "\u0906\u092A\u0932\u0940 \u0909\u092A\u0938\u094D\u0925\u093F\u0924\u0940 \u0906\u0923\u093F \u0906\u0936\u0940\u0930\u094D\u0935\u093E\u0926 \u0906\u092E\u091A\u093E \u0938\u094B\u0939\u0933\u093E \u092A\u0942\u0930\u094D\u0923 \u0915\u0930\u0924\u0940\u0932.",
+    heading:
+      "\u0938\u094D\u0935\u093E\u0917\u0924\u094B\u0924\u094D\u0938\u0941\u0915",
     familyMembers: [
       "[Family Member 1]",
       "[Family Member 2]",
@@ -329,7 +332,8 @@ const mr: Dictionary = {
       "[Family Member 5]",
       "[Family Member 6]",
     ],
-    familyClosing: "\u0938\u0902\u092A\u0942\u0930\u094D\u0923 \u0926\u0947\u0936\u092E\u0941\u0916 \u092A\u0930\u093F\u0935\u093E\u0930",
+    familyClosing:
+      "\u0938\u0902\u092A\u0942\u0930\u094D\u0923 \u0926\u0947\u0936\u092E\u0941\u0916 \u092A\u0930\u093F\u0935\u093E\u0930",
   },
 };
 

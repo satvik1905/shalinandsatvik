@@ -3,11 +3,12 @@
 import { useState } from 'react';
 import { Eyebrow, Display, Body, GOLD } from './Typography';
 import { useLang } from './LanguageContext';
+import { THEME } from '../lib/theme';
 
-const GOLD_BORDER = 'rgba(201, 154, 79, 0.35)';
+const GOLD_BORDER = `rgba(${THEME.lineRgb}, 0.35)`;
 
-const INPUT_BG = 'rgba(255, 255, 255, 0.06)';
-const INPUT_TEXT = '#F5EBD9';
+const INPUT_BG = THEME.inputBg;
+const INPUT_TEXT = THEME.heading;
 
 /**
  * Google Apps Script Web App URL.
@@ -42,7 +43,7 @@ const autofillOverrideCSS = `
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0 1000px rgba(30, 18, 18, 1) inset !important;
+    -webkit-box-shadow: 0 0 0 1000px ${THEME.autofillBg} inset !important;
     -webkit-text-fill-color: ${INPUT_TEXT} !important;
     border-color: ${GOLD_BORDER} !important;
     transition: background-color 5000s ease-in-out 0s;
@@ -96,9 +97,9 @@ export default function RsvpSection() {
     return (
       <section
         className="w-full flex flex-col items-center px-6 py-20"
-        style={{ background: '#1A0E0E' }}
+        style={{ background: THEME.bg }}
       >
-        <Display color="ivory">{t.rsvp.submitted}</Display>
+        <Display color="ink">{t.rsvp.submitted}</Display>
       </section>
     );
   }
@@ -108,20 +109,20 @@ export default function RsvpSection() {
   return (
     <section
       className="w-full flex flex-col items-center px-6 py-20"
-      style={{ background: '#1A0E0E' }}
+      style={{ background: THEME.bg }}
     >
       <style dangerouslySetInnerHTML={{ __html: autofillOverrideCSS }} />
 
       <div className="flex flex-col items-center gap-3 mb-10">
-        <Display color="ivory">{t.rsvp.heading}</Display>
+        <Display color="ink">{t.rsvp.heading}</Display>
       </div>
 
       <div
         className="w-full"
         style={{
           maxWidth: 480,
-          background: '#1E1212',
-          border: '1px solid rgba(201, 154, 79, 0.3)',
+          background: THEME.surface,
+          border: `1px solid rgba(${THEME.lineRgb}, 0.3)`,
           borderRadius: 20,
           padding: '28px 24px',
         }}
@@ -161,8 +162,8 @@ export default function RsvpSection() {
                     cursor: isSubmitting ? 'not-allowed' : 'pointer',
                     transition: 'background 0.2s, border-color 0.2s, color 0.2s',
                     background: selected
-                      ? 'rgba(224, 184, 79, 0.22)'
-                      : 'rgba(255, 255, 255, 0.06)',
+                      ? `rgba(${THEME.goldRgb}, 0.22)`
+                      : INPUT_BG,
                     borderColor: selected
                       ? GOLD
                       : GOLD_BORDER,
@@ -199,7 +200,7 @@ export default function RsvpSection() {
             as="p"
             style={{
               fontSize: '0.85rem',
-              color: '#e57373',
+              color: THEME.error,
               textAlign: 'center',
             }}
           >
@@ -215,8 +216,8 @@ export default function RsvpSection() {
             marginTop: 8,
             padding: '12px 24px',
             borderRadius: 9999,
-            border: `1px solid ${isValid && !isSubmitting ? 'rgba(224, 184, 79, 0.6)' : GOLD_BORDER}`,
-            background: isValid && !isSubmitting ? 'rgba(224, 184, 79, 0.15)' : 'transparent',
+            border: `1px solid ${isValid && !isSubmitting ? `rgba(${THEME.goldRgb}, 0.6)` : GOLD_BORDER}`,
+            background: isValid && !isSubmitting ? `rgba(${THEME.goldRgb}, 0.15)` : 'transparent',
             color: GOLD,
             fontFamily: 'var(--font-geist-sans)',
             fontSize: '0.75rem',

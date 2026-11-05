@@ -9,6 +9,7 @@ import {
   useState,
 } from 'react';
 import { GOLD } from './Typography';
+import { THEME } from '../lib/theme';
 
 /* ═══════════════════════════════════════════════════════════════
    Background-music toggle — floating bottom-right button.
@@ -121,10 +122,10 @@ const MusicToggle = forwardRef<MusicToggleHandle, MusicToggleProps>(
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'rgba(26, 14, 14, 0.75)',
+          background: THEME.glass,
           backdropFilter: 'blur(8px)',
           WebkitBackdropFilter: 'blur(8px)',
-          border: '1px solid rgba(224, 184, 79, 0.4)',
+          border: `1px solid rgba(${THEME.goldRgb}, 0.4)`,
           cursor: 'pointer',
           opacity: visible ? 1 : 0,
           pointerEvents: visible ? 'auto' : 'none',
