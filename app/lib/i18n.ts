@@ -103,7 +103,7 @@ const en: Dictionary = {
       "With love and the blessings of our families, we invite you to celebrate the wedding of",
     name1: "Shalin",
     name1Parents:
-      "(daughter of Mr. Kunal Rajnikant Deshmukh & Mrs. Sarita Kunal Deshmukh)",
+      "(daughter of Mr. Kunal Rajanikant Deshmukh & Mrs. Sarita Kunal Deshmukh)",
     conjunction: "and",
     name2: "Satvik",
     name2Parents:
