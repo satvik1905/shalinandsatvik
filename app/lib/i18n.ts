@@ -67,21 +67,26 @@ export interface Dictionary {
     haldiTime: string;
     haldiDesc: string;
     haldiDress: string;
+    haldiVenue: string;
     mayra: string;
     mayraTime: string;
     mayraDesc: string;
     mayraDress: string;
+    mayraVenue: string;
     sangeet: string;
     sangeetTime: string;
     sangeetDesc: string;
     sangeetDress: string;
+    sangeetVenue: string;
     wedding: string;
     weddingDesc: string;
     weddingDress: string;
+    weddingVenue: string;
     reception: string;
     receptionTime: string;
     receptionDesc: string;
     receptionDress: string;
+    receptionVenue: string;
     dressLabel: string;
     muhuratLabel: string;
     muhuratTime: string;
@@ -169,38 +174,39 @@ const en: Dictionary = {
     afternoon: "Afternoon",
     evening: "Evening",
     haldi: "Haldi & Hues",
-    haldiTime: "",
+    haldiTime: "11 AM",
     haldiDesc: "",
     haldiDress: "",
+    haldiVenue: "Lawn",
     mayra: "Laadli ka Mayra",
-    mayraTime: "",
+    mayraTime: "4 PM",
     mayraDesc: "",
     mayraDress: "",
+    mayraVenue: "Banquet",
     sangeet: "Mehfil-e-Ishq",
     sangeetTime: "7 PM",
     sangeetDesc: "",
     sangeetDress: "",
+    sangeetVenue: "Banquet",
     wedding: "SATVachanSHALwe",
     weddingDesc: "",
     weddingDress: "",
+    weddingVenue: "Lawn",
     reception: "The Happily Ever After Party",
-    receptionTime: "",
+    receptionTime: "1:30 PM",
     receptionDesc: "",
     receptionDress: "",
+    receptionVenue: "Lawn",
     dressLabel: "Wear",
     muhuratLabel: "Shubh Muhurat",
-    muhuratTime: "",
+    muhuratTime: "10:30 AM",
   },
   closing: {
     message: "Your presence and blessings will make our celebration complete.",
     heading: "Eagerly awaiting you",
     familyMembers: [
-      "[Family Member 1]",
-      "[Family Member 2]",
-      "[Family Member 3]",
-      "[Family Member 4]",
-      "[Family Member 5]",
-      "[Family Member 6]",
+      "Sushama Rajanikant Deshmukh",
+      "Harsh Kunal Deshmukh",
     ],
     familyClosing: "All of Deshmukh family",
   },
@@ -296,28 +302,33 @@ const mr: Dictionary = {
     afternoon: "\u0926\u0941\u092A\u093E\u0930",
     evening: "\u0938\u0902\u0927\u094D\u092F\u093E\u0915\u093E\u0933",
     haldi: "Haldi & Hues",
-    haldiTime: "",
+    haldiTime: "11 AM",
     haldiDesc: "",
     haldiDress: "",
+    haldiVenue: "Lawn",
     mayra: "Laadli ka Mayra",
-    mayraTime: "",
+    mayraTime: "4 PM",
     mayraDesc: "",
     mayraDress: "",
+    mayraVenue: "Banquet",
     sangeet: "Mehfil-e-Ishq",
     sangeetTime: "7 PM",
     sangeetDesc: "",
     sangeetDress: "",
+    sangeetVenue: "Banquet",
     wedding: "SATVachanSHALwe",
     weddingDesc: "",
     weddingDress: "",
+    weddingVenue: "Lawn",
     reception: "The Happily Ever After Party",
-    receptionTime: "",
+    receptionTime: "1:30 PM",
     receptionDesc: "",
     receptionDress: "",
+    receptionVenue: "Lawn",
     dressLabel: "\u092A\u094B\u0936\u093E\u0916",
     muhuratLabel:
       "\u0936\u0941\u092D \u092E\u0941\u0939\u0942\u0930\u094D\u0924",
-    muhuratTime: "",
+    muhuratTime: "10:30 AM",
   },
   closing: {
     message:
@@ -325,12 +336,8 @@ const mr: Dictionary = {
     heading:
       "\u0938\u094D\u0935\u093E\u0917\u0924\u094B\u0924\u094D\u0938\u0941\u0915",
     familyMembers: [
-      "[Family Member 1]",
-      "[Family Member 2]",
-      "[Family Member 3]",
-      "[Family Member 4]",
-      "[Family Member 5]",
-      "[Family Member 6]",
+      "Sushama Rajanikant Deshmukh",
+      "Harsh Kunal Deshmukh",
     ],
     familyClosing:
       "\u0938\u0902\u092A\u0942\u0930\u094D\u0923 \u0926\u0947\u0936\u092E\u0941\u0916 \u092A\u0930\u093F\u0935\u093E\u0930",

@@ -13,9 +13,9 @@ import { THEME, GOLD_ON_DARK, IVORY_ON_DARK } from '../lib/theme';
 const CONFIG = {
   CARD_RADIUS: 16,
   CARD_GAP: 20,
-  COLUMN_MAX: 600,
-  /** Aspect ratio for cards with an illustration background. */
-  ASPECT_RATIO: '3 / 4',
+  COLUMN_MAX: 420,
+  /** Aspect ratio for cards with an illustration background (artwork is square). */
+  ASPECT_RATIO: '1 / 1',
 };
 
 const GOLD_BORDER = `rgba(${THEME.lineRgb}, 0.3)`;
@@ -98,7 +98,7 @@ function BleedCard({ event }: { event: CardEvent }) {
           alt={event.alt}
           fill
           className="object-cover"
-          sizes="(max-width: 640px) 100vw, 600px"
+          sizes="(max-width: 640px) 100vw, 420px"
         />
       )}
 
@@ -146,8 +146,8 @@ function BleedCard({ event }: { event: CardEvent }) {
         )}
 
         {/* Venue spot */}
-        <Eyebrow variant="label" style={{ marginTop: 4, opacity: 0.5, color: IVORY_ON_DARK }}>
-          <Placeholder>VENUE TBD</Placeholder>
+        <Eyebrow variant="label" style={{ marginTop: 4, opacity: event.venueSpot ? 0.85 : 0.5, color: IVORY_ON_DARK }}>
+          {event.venueSpot || <Placeholder>VENUE TBD</Placeholder>}
         </Eyebrow>
       </div>
     </div>
@@ -201,7 +201,7 @@ function FallbackCard({ event }: { event: CardEvent }) {
 
       <div style={{ marginTop: 8 }}>
         <Eyebrow variant="label" style={{ opacity: 0.7 }}>
-          <Placeholder>VENUE TBD</Placeholder>
+          {event.venueSpot || <Placeholder>VENUE TBD</Placeholder>}
         </Eyebrow>
       </div>
     </div>
@@ -219,7 +219,7 @@ export default function FullBleedCardsSection() {
         id: 'haldi',
         time: t.itinerary.haldiTime,
         name: t.itinerary.haldi,
-        venueSpot: '',
+        venueSpot: t.itinerary.haldiVenue,
         illustration: ILLUSTRATIONS.haldi,
         alt: t.itinerary.haldi,
       },
@@ -227,7 +227,7 @@ export default function FullBleedCardsSection() {
         id: 'mayra',
         time: t.itinerary.mayraTime,
         name: t.itinerary.mayra,
-        venueSpot: '',
+        venueSpot: t.itinerary.mayraVenue,
         illustration: ILLUSTRATIONS.mayra,
         alt: t.itinerary.mayra,
       },
@@ -235,7 +235,7 @@ export default function FullBleedCardsSection() {
         id: 'sangeet',
         time: t.itinerary.sangeetTime,
         name: t.itinerary.sangeet,
-        venueSpot: '',
+        venueSpot: t.itinerary.sangeetVenue,
         illustration: ILLUSTRATIONS.sangeet,
         alt: t.itinerary.sangeet,
       },
@@ -249,7 +249,7 @@ export default function FullBleedCardsSection() {
         id: 'wedding',
         time: t.itinerary.muhuratTime,
         name: t.itinerary.wedding,
-        venueSpot: '',
+        venueSpot: t.itinerary.weddingVenue,
         illustration: ILLUSTRATIONS.wedding,
         alt: t.itinerary.wedding,
       },
@@ -257,7 +257,7 @@ export default function FullBleedCardsSection() {
         id: 'reception',
         time: t.itinerary.receptionTime,
         name: t.itinerary.reception,
-        venueSpot: '',
+        venueSpot: t.itinerary.receptionVenue,
         illustration: ILLUSTRATIONS.reception,
         alt: t.itinerary.reception,
       },
