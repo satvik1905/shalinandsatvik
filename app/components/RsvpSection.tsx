@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Eyebrow, Display, Body, GOLD } from './Typography';
+import { Display, Body, GOLD } from './Typography';
 import { useLang } from './LanguageContext';
 import { THEME } from '../lib/theme';
 
@@ -78,14 +78,14 @@ export default function RsvpSection() {
         guestCount: isYes ? Number(guestCount) : 0,
       };
 
-      const res = await fetch(RSVP_ENDPOINT, {
+      await fetch(RSVP_ENDPOINT, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
 
-      // no-cors returns opaque response (status 0), so we can't check res.ok.
+      // no-cors returns opaque response (status 0), so we can't check the response.
       // If fetch didn't throw, the request was sent successfully.
       setStatus('submitted');
     } catch {

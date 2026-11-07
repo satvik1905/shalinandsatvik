@@ -8,7 +8,7 @@ import { useLang } from './LanguageContext';
 import { THEME } from '../lib/theme';
 
 export default function ScratchSection() {
-  const [revealedCount, setRevealedCount] = useState(0);
+  const [, setRevealedCount] = useState(0);
   const [allRevealed, setAllRevealed] = useState(false);
   const allRevealedRef = useRef(false);
   const { t } = useLang();

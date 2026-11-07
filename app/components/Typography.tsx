@@ -1,12 +1,12 @@
 'use client';
 
-import { Fragment, type ReactNode, type ElementType, type CSSProperties } from 'react';
+import { type ReactNode, type ElementType, type CSSProperties } from 'react';
 import { useLang } from './LanguageContext';
 import { THEME } from '../lib/theme';
 
 // ── Tokens ─────────────────────────────────────────────────────
 export const GOLD = THEME.gold;
-export const INK = THEME.heading;
+const INK = THEME.heading;
 
 // ── Font helpers ───────────────────────────────────────────────
 
@@ -18,18 +18,6 @@ function useFont() {
     sans: isMr ? 'var(--font-tiro-devanagari)' : 'var(--font-geist-sans)',
     isMr,
   };
-}
-
-// ── Lines helper ───────────────────────────────────────────────
-
-export function Lines({ lines }: { lines: string[] }) {
-  return (
-    <>
-      {lines.map((line, i) => (
-        <Fragment key={i}>{i > 0 && <br />}{line}</Fragment>
-      ))}
-    </>
-  );
 }
 
 // ── Eyebrow ────────────────────────────────────────────────────
@@ -55,28 +43,6 @@ export function Eyebrow({ children, variant = 'default', as: Tag = 'span', class
     letterSpacing: isMr ? (isLabel ? '0.08em' : '0.12em') : (isLabel ? '0.32em' : '0.42em'),
     lineHeight: isMr ? 1.6 : undefined,
     color: GOLD,
-  };
-  return <Tag className={className} style={{ ...base, ...style }}>{children}</Tag>;
-}
-
-// ── DisplayXL ──────────────────────────────────────────────────
-
-interface DisplayXLProps {
-  children: ReactNode;
-  as?: ElementType;
-  className?: string;
-  style?: CSSProperties;
-}
-
-export function DisplayXL({ children, as: Tag = 'h1', className = '', style }: DisplayXLProps) {
-  const { serif, isMr } = useFont();
-  const base: CSSProperties = {
-    fontFamily: serif,
-    fontStyle: isMr ? 'normal' : 'italic',
-    fontWeight: 400,
-    fontSize: isMr ? 'clamp(5.25rem, 21vw, 9.5rem)' : 'clamp(4.5rem, 18vw, 8rem)',
-    lineHeight: isMr ? 1.15 : 0.95,
-    color: INK,
   };
   return <Tag className={className} style={{ ...base, ...style }}>{children}</Tag>;
 }

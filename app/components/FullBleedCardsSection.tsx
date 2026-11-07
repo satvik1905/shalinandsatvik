@@ -26,7 +26,7 @@ const ILLUSTRATIONS: Record<string, string> = {
   mayra: '/mayra.png',
   sangeet: '/sangeet.png',
   wedding: '/wedding.png',
-  reception: '',
+  reception: '/reception.png',
 };
 
 /* ── Placeholder ────────────────────────────────────────────── */

@@ -1,6 +1,6 @@
 'use client';
 
-import { Eyebrow, Display, Body, GOLD } from './Typography';
+import { Display, Body, GOLD } from './Typography';
 import { useLang } from './LanguageContext';
 import { THEME } from '../lib/theme';
 

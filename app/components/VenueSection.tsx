@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { Eyebrow, Display, Body, MapLink } from "./Typography";
+import { Display, MapLink } from "./Typography";
 import { useLang } from "./LanguageContext";
 import { THEME } from "../lib/theme";
 
