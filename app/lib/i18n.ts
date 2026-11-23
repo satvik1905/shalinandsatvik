@@ -58,26 +58,10 @@ export interface Dictionary {
   };
   itinerary: {
     heading: string;
-    day1: string;
-    day2: string;
+    weddingDay: string;
     morning: string;
     afternoon: string;
     evening: string;
-    haldi: string;
-    haldiTime: string;
-    haldiDesc: string;
-    haldiDress: string;
-    haldiVenue: string;
-    mayra: string;
-    mayraTime: string;
-    mayraDesc: string;
-    mayraDress: string;
-    mayraVenue: string;
-    sangeet: string;
-    sangeetTime: string;
-    sangeetDesc: string;
-    sangeetDress: string;
-    sangeetVenue: string;
     wedding: string;
     weddingDesc: string;
     weddingDress: string;
@@ -168,26 +152,10 @@ const en: Dictionary = {
   },
   itinerary: {
     heading: "The Celebrations",
-    day1: "26th December",
-    day2: "27th December",
+    weddingDay: "27th December",
     morning: "Morning",
     afternoon: "Afternoon",
     evening: "Evening",
-    haldi: "Haldi & Hues",
-    haldiTime: "11 AM",
-    haldiDesc: "",
-    haldiDress: "",
-    haldiVenue: "Lawn",
-    mayra: "Laadli ka Mayra",
-    mayraTime: "4 PM",
-    mayraDesc: "",
-    mayraDress: "",
-    mayraVenue: "Banquet",
-    sangeet: "Mehfil-e-Ishq",
-    sangeetTime: "7 PM",
-    sangeetDesc: "",
-    sangeetDress: "",
-    sangeetVenue: "Banquet",
     wedding: "SATVachanSHALwe",
     weddingDesc: "",
     weddingDress: "",
@@ -296,26 +264,10 @@ const mr: Dictionary = {
   },
   itinerary: {
     heading: "\u0938\u094B\u0939\u0933\u0947",
-    day1: "\u0968\u096C \u0921\u093F\u0938\u0947\u0902\u092C\u0930",
-    day2: "\u0968\u096D \u0921\u093F\u0938\u0947\u0902\u092C\u0930",
+    weddingDay: "\u0968\u096D \u0921\u093F\u0938\u0947\u0902\u092C\u0930",
     morning: "\u0938\u0915\u093E\u0933",
     afternoon: "\u0926\u0941\u092A\u093E\u0930",
     evening: "\u0938\u0902\u0927\u094D\u092F\u093E\u0915\u093E\u0933",
-    haldi: "Haldi & Hues",
-    haldiTime: "11 AM",
-    haldiDesc: "",
-    haldiDress: "",
-    haldiVenue: "Lawn",
-    mayra: "Laadli ka Mayra",
-    mayraTime: "4 PM",
-    mayraDesc: "",
-    mayraDress: "",
-    mayraVenue: "Banquet",
-    sangeet: "Mehfil-e-Ishq",
-    sangeetTime: "7 PM",
-    sangeetDesc: "",
-    sangeetDress: "",
-    sangeetVenue: "Banquet",
     wedding: "SATVachanSHALwe",
     weddingDesc: "",
     weddingDress: "",

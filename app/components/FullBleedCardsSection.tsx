@@ -22,9 +22,6 @@ const GOLD_BORDER = `rgba(${THEME.lineRgb}, 0.3)`;
 const CARD_BG_FALLBACK = THEME.surface;
 
 const ILLUSTRATIONS: Record<string, string> = {
-  haldi: '/haldi.png',
-  mayra: '/mayra.png',
-  sangeet: '/sangeet.png',
   wedding: '/wedding.png',
   reception: '/reception.png',
 };
@@ -213,37 +210,7 @@ function FallbackCard({ event }: { event: CardEvent }) {
 export default function FullBleedCardsSection() {
   const { t } = useLang();
 
-  const day1Events = useMemo<CardEvent[]>(
-    () => [
-      {
-        id: 'haldi',
-        time: t.itinerary.haldiTime,
-        name: t.itinerary.haldi,
-        venueSpot: t.itinerary.haldiVenue,
-        illustration: ILLUSTRATIONS.haldi,
-        alt: t.itinerary.haldi,
-      },
-      {
-        id: 'mayra',
-        time: t.itinerary.mayraTime,
-        name: t.itinerary.mayra,
-        venueSpot: t.itinerary.mayraVenue,
-        illustration: ILLUSTRATIONS.mayra,
-        alt: t.itinerary.mayra,
-      },
-      {
-        id: 'sangeet',
-        time: t.itinerary.sangeetTime,
-        name: t.itinerary.sangeet,
-        venueSpot: t.itinerary.sangeetVenue,
-        illustration: ILLUSTRATIONS.sangeet,
-        alt: t.itinerary.sangeet,
-      },
-    ],
-    [t],
-  );
-
-  const day2Events = useMemo<CardEvent[]>(
+  const weddingDayEvents = useMemo<CardEvent[]>(
     () => [
       {
         id: 'wedding',
@@ -283,22 +250,11 @@ export default function FullBleedCardsSection() {
       </div>
 
       <div className="mx-auto" style={{ maxWidth: CONFIG.COLUMN_MAX }}>
-        {/* ── Day 1 ────────────────────────────────────── */}
-        <DayDivider date={t.itinerary.day1} />
+        {/* ── Wedding day ──────────────────────────────── */}
+        <DayDivider date={t.itinerary.weddingDay} />
 
         <div className="flex flex-col" style={{ gap: CONFIG.CARD_GAP }}>
-          {day1Events.map((ev) =>
-            ev.illustration
-              ? <BleedCard key={ev.id} event={ev} />
-              : <FallbackCard key={ev.id} event={ev} />
-          )}
-        </div>
-
-        {/* ── Day 2 ────────────────────────────────────── */}
-        <DayDivider date={t.itinerary.day2} />
-
-        <div className="flex flex-col" style={{ gap: CONFIG.CARD_GAP }}>
-          {day2Events.map((ev) =>
+          {weddingDayEvents.map((ev) =>
             ev.illustration
               ? <BleedCard key={ev.id} event={ev} />
               : <FallbackCard key={ev.id} event={ev} />

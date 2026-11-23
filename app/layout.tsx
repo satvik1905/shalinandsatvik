@@ -33,11 +33,11 @@ export const metadata: Metadata = {
   ),
   title: "Shalin Weds Satvik",
   description:
-    "Join us as we begin our forever \u00b7 26\u201327 December 2026, Hill Rock Resort, Karjat",
+    "Join us as we begin our forever \u00b7 27 December 2026, Hill Rock Resort, Karjat",
   openGraph: {
     title: "Shalin Weds Satvik",
     description:
-      "Join us as we begin our forever \u00b7 26\u201327 December 2026, Hill Rock Resort, Karjat",
+      "Join us as we begin our forever \u00b7 27 December 2026, Hill Rock Resort, Karjat",
     type: "website",
     locale: "en_IN",
   },
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shalin Weds Satvik",
     description:
-      "Join us as we begin our forever \u00b7 26\u201327 December 2026, Hill Rock Resort, Karjat",
+      "Join us as we begin our forever \u00b7 27 December 2026, Hill Rock Resort, Karjat",
   },
 };
 
